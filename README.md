@@ -458,3 +458,9 @@ const db = await MiniDb.openOrRebuild(
 Design distilled from reading: Redis (`references/redis`), the SQLite WAL
 paper, NeDB (`references/nedb`), Bitcask (`references/bitcask`), and the
 cstack SQLite tutorial (`references/db_tutorial`).
+
+## Origin
+
+`minidb` was originally developed as part of [kimi-code](https://github.com/MoonshotAI/kimi-code)
+by Moonshot AI and is released under the MIT License. This repository extracts
+it as a standalone, independently maintained open-source package.
