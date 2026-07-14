@@ -1,5 +1,7 @@
 # minidb
 
+English | [中文](./README.zh-CN.md)
+
 A **pure-Node.js** (zero native addons) embedded key-value database that mixes
 ideas from **Redis** (in-memory KV speed, data structures, AOF-style rewrite)
 and **SQLite** (durable single-file persistence, WAL, indexed queries).
@@ -343,7 +345,7 @@ disk-bound; **group commit** makes concurrent writes very fast, while
 `synchronous` (`always`) writes pay the fsync cost one would expect from any
 database. Numbers vary by machine/disk.
 
-Query benchmarks (N=50k docs, 200 iters each, `node bench/query.js`):
+Query benchmarks (N=50k docs, 200 iters each, `node bench/query.ts`):
 
 | Query | Throughput |
 |---|---|
@@ -364,7 +366,7 @@ sub-millisecond at any offset.
 
 ## Testing
 
-Three layers of tests, run with [Vitest](https://vitest.dev):
+Two test suites, run with [Vitest](https://vitest.dev):
 
 ```bash
 npm test            # unit tests (fast)

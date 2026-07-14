@@ -1,8 +1,8 @@
-// bench/bench.js
+// bench/bench.ts
 //
 // Throughput / latency micro-benchmarks for MiniDb.
 //
-// Run:  npm run bench   (or: node bench/bench.js)
+// Run:  npm run bench   (or: node --import tsx bench/bench.ts)
 
 import fs from 'node:fs/promises';
 import os from 'node:os';
