@@ -1,0 +1,58 @@
+{
+  "name": "minidb",
+  "version": "0.1.0",
+  "description": "A pure-Node.js embedded key-value database mixing Redis-style in-memory KV with SQLite-style durable persistence (WAL + snapshot).",
+  "license": "MIT",
+  "author": "Moonshot AI",
+  "homepage": "https://github.com/neluca/minidb#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neluca/minidb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neluca/minidb/issues"
+  },
+  "keywords": [
+    "database",
+    "key-value",
+    "embedded",
+    "wal",
+    "snapshot",
+    "typescript"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*.ts"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:e2e": "vitest run --config vitest.e2e.config.ts",
+    "test:all": "vitest run && vitest run --config vitest.e2e.config.ts",
+    "server": "node --import tsx src/server.ts",
+    "bench": "node --import tsx bench/bench.ts",
+    "bench:query": "node --import tsx bench/query.ts",
+    "bench:baseline": "node --import tsx bench/baseline.ts",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "tsdown": "0.22.0",
+    "tsx": "^4.21.0",
+    "typescript": "6.0.2",
+    "vitest": "4.1.4"
+  },
+  "engines": {
+    "node": ">=24.15.0"
+  }
+}
