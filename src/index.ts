@@ -25,16 +25,19 @@ import { encodeFrame, encodeBatchOps, scanBatchOpRefs, HEADER_SIZE, TYPE_SET, TY
 import type { BatchOp as EncodedBatchOp } from './codec.js';
 import type { FsyncPolicy } from './wal.js';
 import type { RecoveryMode, RecoveryInfo, ValueMode } from './recovery.js';
-import type { IndexDef, IndexInfo } from './index-manager.js';
+import type { IndexDef, IndexInfo, FindRangeOptions } from './index-manager.js';
 import type { CompoundIndexDef, CompoundIndexInfo } from './compound-index.js';
 import type { DtRangeEntry } from './dt-index.js';
 import type { RangeOptions } from './skiplist.js';
 
 export { UniqueViolationError } from './index-manager.js';
 export { LockError } from './lockfile.js';
-export type { RecoveryInfo } from './recovery.js';
-export type { IndexDef, IndexInfo, IndexType } from './index-manager.js';
+export type { RecoveryInfo, RecoveryMode, ValueMode } from './recovery.js';
+export type { FsyncPolicy } from './wal.js';
+export type { IndexDef, IndexInfo, IndexType, FindRangeOptions } from './index-manager.js';
 export type { CompoundIndexDef, CompoundIndexInfo } from './compound-index.js';
+export type { DtRangeEntry } from './dt-index.js';
+export type { RangeOptions } from './skiplist.js';
 
 export type ValueCodecName = 'buffer' | 'string' | 'json';
 
@@ -967,7 +970,7 @@ export class MiniDb<V = unknown> {
       .map((pk) => ({ key: fromKStr(pk), value: this.decode(this.store.get(pk)) }))
       .filter((r): r is { key: string; value: V } => r.value !== undefined);
   }
-  findRange(name: string, opts: Parameters<IndexManager['findRange']>[1]): { key: string; value: V | undefined; field: number }[] {
+  findRange(name: string, opts: FindRangeOptions): { key: string; value: V | undefined; field: number }[] {
     this.ensureOpen();
     return this.indexes
       .findRange(name, opts)

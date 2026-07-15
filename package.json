@@ -1,7 +1,8 @@
 {
-  "name": "minidb",
+  "name": "minidb-kv",
   "version": "0.1.0",
   "description": "A pure-Node.js embedded key-value database mixing Redis-style in-memory KV with SQLite-style durable persistence (WAL + snapshot).",
+  "displayName": "minidb",
   "license": "MIT",
   "author": "Moonshot AI",
   "contributors": [
@@ -58,6 +59,6 @@
     "vitest": "4.1.4"
   },
   "engines": {
-    "node": ">=24.15.0"
+    "node": ">=20.0.0"
   }
 }

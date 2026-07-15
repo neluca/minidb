@@ -24,9 +24,13 @@
 
 ## 安装与目录结构
 
-> **注意：** `minidb` 尚未发布到 npm。npm 上的 `minidb` 名称已被另一个项目占用，因此本仓库未来发布到 npm 时将使用其他名称。
->
-> 目前请直接从 GitHub 安装，或克隆仓库：
+> **注意：** npm 上的 `minidb` 名称已被另一个项目占用。本包以 **`minidb-kv`** 名称发布。
+
+```bash
+npm install minidb-kv
+```
+
+或直接从 GitHub 安装：
 
 ```bash
 npm install https://github.com/neluca/minidb.git
@@ -41,6 +45,8 @@ npm install
 ```
 
 使用 **TypeScript** 编写，运行时零依赖。源码位于 `src/`，构建输出到 `dist/`（通过 `npm run build` 生成）。
+
+需要 **Node.js >= 20**。
 
 ```
 src/
@@ -87,7 +93,7 @@ node --import tsx examples/basic.ts
 ## 快速开始（嵌入式）
 
 ```ts
-import { MiniDb } from 'minidb';
+import { MiniDb } from 'minidb-kv';
 
 const db = await MiniDb.open({
   dir: './data',
@@ -105,7 +111,7 @@ await db.del('hello');
 await db.close();           // 刷新 + fsync + 关闭
 ```
 
-> 在本仓库中开发时，从 `./src/index.ts` 导入（使用 `tsx` 运行）。从 GitHub 安装时，本地包名仍为 `minidb`，因此上面的快速开始导入可以正常工作。等本包未来以新名称发布到 npm 后，请相应修改导入路径。
+> 在本仓库中开发时，从 `./src/index.ts` 导入（使用 `tsx` 运行）。作为包安装时，从 `'minidb-kv'` 导入（使用构建后的 `dist/` 输出）。
 
 重新打开同一个 `dir`，数据会从快照 + WAL 中恢复。
 

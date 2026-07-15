@@ -13,8 +13,8 @@ keep your dependency up to date.
 ## Reporting a vulnerability
 
 If you discover a security vulnerability in minidb, please report it privately
-via email to the repository maintainer. Do **not** open a public issue or
-discussion for security-sensitive bugs.
+through [GitHub Security Advisories](https://github.com/neluca/minidb/security/advisories/new).
+Do **not** open a public issue or discussion for security-sensitive bugs.
 
 Please include as much detail as possible, such as:
 

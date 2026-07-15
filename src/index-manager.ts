@@ -24,6 +24,16 @@ export interface IndexInfo {
   sparse: boolean;
 }
 
+export interface FindRangeOptions {
+  min?: number;
+  max?: number;
+  minExclusive?: boolean;
+  maxExclusive?: boolean;
+  offset?: number;
+  count?: number;
+  reverse?: boolean;
+}
+
 interface EqIndex {
   name: string;
   field: string;
@@ -283,10 +293,7 @@ export class IndexManager {
     return !!set && set.has(pk);
   }
 
-  findRange(
-    name: string,
-    opts: { min?: number; max?: number; minExclusive?: boolean; maxExclusive?: boolean; offset?: number; count?: number; reverse?: boolean } = {},
-  ): { pk: string; value: number }[] {
+  findRange(name: string, opts: FindRangeOptions = {}): { pk: string; value: number }[] {
     const idx = this.get(name);
     if (idx.type !== 'range') throw new Error(`index "${name}" is not a range index`);
     const r: RangeOptions<number> = {};
