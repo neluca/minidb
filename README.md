@@ -224,7 +224,7 @@ TF-IDF ranking.
 | `del(key)` | Delete; returns `true` if it existed |
 | `has(key)`, `size` | Membership / live key count |
 | `mget([keys])`, `mset([[k,v],...])` | Batch read / write |
-| `batch([{op:'set'|'del', key, value?, ttl?, dt?}])` | Atomically commit multiple ops (all-or-nothing) |
+| `batch([{op:'set'\|'del', key, value?, ttl?, dt?}])` | Atomically commit multiple ops (all-or-nothing) |
 | `expire(key, ttlMs)`, `ttl(key)` | Set / read TTL |
 | `createIndex(name, { field, type?, unique?, sparse? })` | Secondary index (json codec) |
 | `dropIndex(name)`, `listIndexes()` | Manage indexes |

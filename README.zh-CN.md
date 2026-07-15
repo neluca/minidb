@@ -202,7 +202,7 @@ db.search('body', 'hello 世界', { op: 'AND' });         // [{ key, value, scor
 | `del(key)` | 删除；若 key 存在返回 `true` |
 | `has(key)`、`size` | 成员判断 / 存活 key 数量 |
 | `mget([keys])`、`mset([[k,v],...])` | 批量读 / 写 |
-| `batch([{op:'set'|'del', key, value?, ttl?, dt?}])` | 原子提交多个操作（要么全部成功，要么全部失败） |
+| `batch([{op:'set'\|'del', key, value?, ttl?, dt?}])` | 原子提交多个操作（要么全部成功，要么全部失败） |
 | `expire(key, ttlMs)`、`ttl(key)` | 设置 / 读取 TTL |
 | `createIndex(name, { field, type?, unique?, sparse? })` | 创建二级索引（json 编解码器） |
 | `dropIndex(name)`、`listIndexes()` | 管理索引 |
