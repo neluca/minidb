@@ -2,6 +2,9 @@
 
 English | [中文](./README.zh-CN.md)
 
+[![CI](https://github.com/neluca/minidb/actions/workflows/ci.yml/badge.svg)](https://github.com/neluca/minidb/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
 A **pure-Node.js** (zero native addons) embedded key-value database that mixes
 ideas from **Redis** (in-memory KV speed, data structures, AOF-style rewrite)
 and **SQLite** (durable single-file persistence, WAL, indexed queries).

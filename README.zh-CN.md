@@ -2,6 +2,9 @@
 
 [English](./README.md) | 中文
 
+[![CI](https://github.com/neluca/minidb/actions/workflows/ci.yml/badge.svg)](https://github.com/neluca/minidb/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+
 一个**纯 Node.js**（零原生扩展）嵌入式键值数据库，融合了 **Redis**（内存 KV 速度、数据结构、AOF 式重写）与 **SQLite**（持久化单文件、WAL、索引查询）的设计思想。使用 **TypeScript** 编写，类型严格，运行时零依赖。
 
 > 通过研究 Redis、SQLite、NeDB、Bitcask 以及一个迷你 SQLite 克隆的真实源码构建而成 —— 各数据库给我们的启示请见 [`DESIGN_NOTES.md`](./DESIGN_NOTES.md)。
