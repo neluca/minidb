@@ -36,11 +36,11 @@ Written in **TypeScript**, with strict types and zero runtime dependencies.
 
 ## Install / layout
 
-> **Note:** The npm package name `minidb` is already used by a different
-> project. This package is published as **`minidb-kv`**.
+> **Note:** The unscoped npm package name `minidb` is already used by a
+> different project. This package is published as **`@neluca/minidb`**.
 
 ```bash
-npm install minidb-kv
+npm install @neluca/minidb
 ```
 
 Or install directly from GitHub:
@@ -107,7 +107,7 @@ node --import tsx examples/basic.ts
 ## Quick start (embedded)
 
 ```ts
-import { MiniDb } from 'minidb-kv';
+import { MiniDb } from '@neluca/minidb';
 
 const db = await MiniDb.open({
   dir: './data',
@@ -126,7 +126,8 @@ await db.close();           // flush + fsync + close
 ```
 
 > Within this repo, import from `./src/index.ts` (run with `tsx`). When
-> installed as a package, import from `'minidb-kv'` (the built `dist/` output).
+> installed as a package, import from `'@neluca/minidb'` (the built `dist/`
+> output).
 
 Re-open the same `dir` and your data is recovered from the snapshot + WAL.
 

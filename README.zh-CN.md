@@ -24,10 +24,10 @@
 
 ## 安装与目录结构
 
-> **注意：** npm 上的 `minidb` 名称已被另一个项目占用。本包以 **`minidb-kv`** 名称发布。
+> **注意：** npm 上无作用域的 `minidb` 名称已被另一个项目占用。本包以 **`@neluca/minidb`** 名称发布。
 
 ```bash
-npm install minidb-kv
+npm install @neluca/minidb
 ```
 
 或直接从 GitHub 安装：
@@ -93,7 +93,7 @@ node --import tsx examples/basic.ts
 ## 快速开始（嵌入式）
 
 ```ts
-import { MiniDb } from 'minidb-kv';
+import { MiniDb } from '@neluca/minidb';
 
 const db = await MiniDb.open({
   dir: './data',
@@ -111,7 +111,7 @@ await db.del('hello');
 await db.close();           // 刷新 + fsync + 关闭
 ```
 
-> 在本仓库中开发时，从 `./src/index.ts` 导入（使用 `tsx` 运行）。作为包安装时，从 `'minidb-kv'` 导入（使用构建后的 `dist/` 输出）。
+> 在本仓库中开发时，从 `./src/index.ts` 导入（使用 `tsx` 运行）。作为包安装时，从 `'@neluca/minidb'` 导入（使用构建后的 `dist/` 输出）。
 
 重新打开同一个 `dir`，数据会从快照 + WAL 中恢复。
 
