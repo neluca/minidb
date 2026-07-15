@@ -36,8 +36,14 @@ Written in **TypeScript**, with strict types and zero runtime dependencies.
 
 ## Install / layout
 
+> **Note:** `minidb` has not been published to npm yet. The package name
+> `minidb` is already used by a different project on npm, so this repository
+> will be published under a different name in the future.
+>
+> For now, install directly from GitHub or clone the repository:
+
 ```bash
-npm install minidb
+npm install https://github.com/neluca/minidb.git
 ```
 
 Or clone this repo and install dev dependencies:
@@ -114,8 +120,10 @@ await db.del('hello');
 await db.close();           // flush + fsync + close
 ```
 
-> Within this repo, import from `./src/index.ts` (run with `tsx`). As an installed
-> package, import from `'minidb'` (the built `dist/` output).
+> Within this repo, import from `./src/index.ts` (run with `tsx`). When
+> installed from GitHub, the local package name is still `minidb`, so the
+> quick-start import above works. Once the package is published to npm under a
+> new name, update the import path accordingly.
 
 Re-open the same `dir` and your data is recovered from the snapshot + WAL.
 

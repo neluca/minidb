@@ -24,8 +24,12 @@
 
 ## 安装与目录结构
 
+> **注意：** `minidb` 尚未发布到 npm。npm 上的 `minidb` 名称已被另一个项目占用，因此本仓库未来发布到 npm 时将使用其他名称。
+>
+> 目前请直接从 GitHub 安装，或克隆仓库：
+
 ```bash
-npm install minidb
+npm install https://github.com/neluca/minidb.git
 ```
 
 或克隆本仓库并安装开发依赖：
@@ -101,7 +105,7 @@ await db.del('hello');
 await db.close();           // 刷新 + fsync + 关闭
 ```
 
-> 在本仓库中开发时，从 `./src/index.ts` 导入（使用 `tsx` 运行）。作为已安装的包使用时，从 `'minidb'` 导入（使用构建后的 `dist/` 输出）。
+> 在本仓库中开发时，从 `./src/index.ts` 导入（使用 `tsx` 运行）。从 GitHub 安装时，本地包名仍为 `minidb`，因此上面的快速开始导入可以正常工作。等本包未来以新名称发布到 npm 后，请相应修改导入路径。
 
 重新打开同一个 `dir`，数据会从快照 + WAL 中恢复。
 
