@@ -5,6 +5,9 @@ node_modules/
 dist/
 *.tsbuildinfo
 
+# Agent-specific instructions (local only)
+AGENTS.md
+
 # External reference implementations (not part of the package)
 references/
 

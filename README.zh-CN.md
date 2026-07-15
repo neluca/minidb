@@ -46,7 +46,7 @@ npm install
 
 使用 **TypeScript** 编写，运行时零依赖。源码位于 `src/`，构建输出到 `dist/`（通过 `npm run build` 生成）。
 
-需要 **Node.js >= 20**。
+需要 **Node.js >= 22**。
 
 ```
 src/
