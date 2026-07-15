@@ -61,6 +61,22 @@ npm run build      # 编译 src/ -> dist/（JS + .d.ts）
 npm run typecheck  # tsc --noEmit（严格模式）
 ```
 
+## 示例
+
+查看 [`examples/`](./examples/) 目录获取可运行的 TypeScript 示例：
+
+- [`basic.ts`](./examples/basic.ts) — CRUD、TTL
+- [`indexes.ts`](./examples/indexes.ts) — 二级索引
+- [`query.ts`](./examples/query.ts) — 带全文搜索的统一查询
+- [`backup.ts`](./examples/backup.ts) — 在线备份与恢复
+- [`server.ts`](./examples/server.ts) — RESP 服务器
+
+运行示例：
+
+```bash
+node --import tsx examples/basic.ts
+```
+
 ## 快速开始（嵌入式）
 
 ```ts

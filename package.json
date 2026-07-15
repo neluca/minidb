@@ -4,6 +4,9 @@
   "description": "A pure-Node.js embedded key-value database mixing Redis-style in-memory KV with SQLite-style durable persistence (WAL + snapshot).",
   "license": "MIT",
   "author": "Moonshot AI",
+  "contributors": [
+    "neluca"
+  ],
   "homepage": "https://github.com/neluca/minidb#readme",
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
     "dist"
   ],
   "type": "module",
+  "sideEffects": false,
   "imports": {
     "#/*": "./src/*.ts"
   },
@@ -43,7 +47,8 @@
     "bench": "node --import tsx bench/bench.ts",
     "bench:query": "node --import tsx bench/query.ts",
     "bench:baseline": "node --import tsx bench/baseline.ts",
-    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\""
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "prepublishOnly": "npm run typecheck && npm run test:all && npm run build"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",

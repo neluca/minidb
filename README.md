@@ -74,6 +74,22 @@ npm run build      # compile src/ -> dist/ (JS + .d.ts)
 npm run typecheck  # tsc --noEmit (strict)
 ```
 
+## Examples
+
+See the [`examples/`](./examples/) directory for runnable TypeScript examples:
+
+- [`basic.ts`](./examples/basic.ts) — CRUD, TTL
+- [`indexes.ts`](./examples/indexes.ts) — secondary indexes
+- [`query.ts`](./examples/query.ts) — unified query with full-text search
+- [`backup.ts`](./examples/backup.ts) — online backup and restore
+- [`server.ts`](./examples/server.ts) — RESP server
+
+Run an example with:
+
+```bash
+node --import tsx examples/basic.ts
+```
+
 ## Quick start (embedded)
 
 ```ts
